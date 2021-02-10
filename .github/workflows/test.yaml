@@ -20,9 +20,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run unit-tests
-      run: make tests_run > coverage_outputs
+      run: make tests_run &> coverage_outputs
     - name: Run coverage
-      run: make coverage > coverage_outputs
+      run: make coverage &> coverage_outputs
     - uses: actions/upload-artifact@v2
       with:
         name: coverage_outputs
@@ -32,7 +32,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run functional tests
-      run: ./functional-test.sh > function-tests_outputs
+      run: ./functional-test.sh &> function-tests_outputs
     - uses: actions/upload-artifact@v2
       with:
         name: function-tests_outputs
