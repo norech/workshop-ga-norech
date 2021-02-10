@@ -20,6 +20,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run unit-tests
-      run: make tests_runs
+      run: make tests_run
     - name: Run coverage
       run: make coverage
