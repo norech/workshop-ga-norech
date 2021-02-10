@@ -20,6 +20,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run unit-tests
-      run: make tests_run
+      run: make tests_run > output.txt
     - name: Run coverage
       run: make coverage
+    - uses: actions/upload-artifact@v2 > output.txt
+      with:
+        name: output
+        path: output.txt
